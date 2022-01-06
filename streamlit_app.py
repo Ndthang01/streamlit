@@ -39,7 +39,7 @@ def main():
 
     col1, col2 = st.columns([6, 4])
     with col2:
-        st.image(f"{resources_dir}/wordcloud.png", width=700)
+        st.image(f"https://previews.123rf.com/images/nlshop1/nlshop11703/nlshop1170300140/73523476-cartoon-characters-man-under-newspapers.jpg", width=700)
 #     col1 = st.columns([6])
     with col1:
         model_name = st.selectbox("Choose your model", index=0, options=list(model_dict.keys()))
