@@ -37,10 +37,10 @@ def main():
     with open("models/tfidf_vectorizer.pkl", "rb") as f:
         tfidf_vectorizer = pickle.load(f)
 
-    # col1, col2 = st.columns([6, 4])
-    # with col2:
-        # st.image(f"{resources_dir}/wordcloud.png", width=700)
-    col1 = st.columns([6])
+    col1, col2 = st.columns([6, 4])
+    with col2:
+        st.image(f"{resources_dir}/wordcloud.png", width=700)
+#     col1 = st.columns([6])
     with col1:
         model_name = st.selectbox("Choose your model", index=0, options=list(model_dict.keys()))
 
