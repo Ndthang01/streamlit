@@ -20,7 +20,7 @@ def main():
     st.title(":newspaper: English fake news detector")
     sess = load_session()
 
-    model_names = ["RandomForest","MLP", "Logistic Regression","SVM"]
+#     model_names = ["RandomForest","MLP", "Logistic Regression","SVM"]
     model_dict = {
             "RandomForest": "models/RandomForest.pkl",
             "Logistic Regression": "models/Logistic.pkl",
