@@ -64,7 +64,8 @@ def main():
                 cleaned_news = text_preprocessing(news)
 
                 text_vectorized = tfidf_vectorizer.transform([cleaned_news])
-                st.markdown(text_vectorized)
+                for item in text_vectorized:
+                    st.markdown(text_vectorized)
 #                 pred = model.predict(text_vectorized[:3829])[0]
 
 #                 if pred == 1:
