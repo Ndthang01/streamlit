@@ -61,6 +61,7 @@ def main():
                 entered_items.markdown("In put at least a piece of news")
             else:
                 model = model_dict[model_name]
+                cleaned_news = text_preprocessing(news)
                 text_vectorized = tfidf_vectorizer.transform([cleaned_news])
                 pred = model.predict(text_vectorized)[0]
 
