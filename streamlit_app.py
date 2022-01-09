@@ -63,7 +63,7 @@ def main():
                 model = model_dict[model_name]
 
                 cleaned_news = text_preprocessing(news)
-                st.markdown(cleaned_news)
+                
                 cleaned_news_list = cleaned_news.split(" ")
                 cleaned_news_dict = dict()
                 for item in cleaned_news_list:
@@ -72,7 +72,7 @@ def main():
                 tfDict = {}
                 wordsCount = sum(cleaned_news_dict.values())
                 for word, count in cleaned_news_dict.items():
-                    tfDict[word] = count/float(wordsCount)
+                    tfDict[word] = count/float(wordsCount + 0.0001)
                     
                 idfDict = {}
                 N = len(cleaned_news_list)
