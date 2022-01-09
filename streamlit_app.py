@@ -78,7 +78,7 @@ def main():
                 N = len(cleaned_news_list)
                 
                 text_vectorized = pd.Series(tfDict)
-                pred = model.predict(texxt_vectorized)[0]
+                pred = model.predict(text_vectorized)[0]
 
 #     for word, val in idfDict.items():
 #         idfDict[word] = math.log10(N / (0.0000001+float(val)))
