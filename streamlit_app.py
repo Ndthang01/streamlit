@@ -77,7 +77,7 @@ def main():
                 idfDict = {}
                 N = len(cleaned_news_list)
                 
-                text_vectorized = pd.DataFrame(tfDict)
+                text_vectorized = pd.Series(tfDict)
                 pred = model.predict(texxt_vectorized)[0]
 
 #     for word, val in idfDict.items():
