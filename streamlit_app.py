@@ -1,4 +1,5 @@
 import pickle
+import pandas as pd
 
 import requests
 import streamlit as st
@@ -63,6 +64,25 @@ def main():
 
                 cleaned_news = text_preprocessing(news)
                 st.markdown(cleaned_news)
+                cleaned_news_list = cleaned_news.split(" ")
+                cleaned_news_dict = dict()
+                for item in cleaned_news_list:
+                    cleaned_news_dict[item] = cleaned_news_dict.get(item,0)
+                    
+                tfDict = {}
+                wordsCount = sum(cleaned_news_dict.values())
+                for word, count in cleaned_news_dict.items():
+                    tfDict[word] = count/float(wordsCount)
+                    
+                idfDict = {}
+                N = len(cleaned_news_list)
+                
+                text_vectorized = pd.DataFrame(tfDict)
+                pred = model.predict(texxt_vectorized)[0]
+
+#     for word, val in idfDict.items():
+#         idfDict[word] = math.log10(N / (0.0000001+float(val)))
+#     return idfDict
 #                 text_vectorized = tfidf_vectorizer.transform([cleaned_news])
                
 #                 pred = model.predict(text_vectorized[0,:3829])[0]
