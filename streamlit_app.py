@@ -62,12 +62,12 @@ def main():
                 model = model_dict[model_name]
 
                 cleaned_news = text_preprocessing(news)
-
-                text_vectorized = tfidf_vectorizer.transform([cleaned_news])
+                st.markdown(cleaned_news)
+#                 text_vectorized = tfidf_vectorizer.transform([cleaned_news])
                
-                pred = model.predict(text_vectorized[0,:3829])[0]
+#                 pred = model.predict(text_vectorized[0,:3829])[0]
 
-                if pred == 1:
+                if pred == 0:
                     st.markdown("Real news")
                 else:
                     st.markdown("Fake news!!!")
